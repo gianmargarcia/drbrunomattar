@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Bruno Brito Mattar | Ortopedista Especialista em Quadril | Hospital Albert Einstein - SP</title>
+  <meta name="description" content="Dr. Bruno Brito Mattar - Ortopedista especialista em quadril. Atendimento no Hospital Israelita Albert Einstein, São Paulo. Agende sua consulta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0C1B2A;--navy-mid:#142D45;--navy-light:#1A3A5C;
+      --gold:#B8976A;--gold-light:#D4B896;--gold-muted:rgba(184,151,106,.15);
+      --cream:#FAF8F5;--white:#FFFFFF;
+      --g200:#E8E4DF;--g300:#C4BDB4;--g500:#8A8279;--g700:#4A4540;--g900:#1E1B18;
+      --blue:#2E6B9E;
+      --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',-apple-system,sans-serif;
+      --r:4px;--rl:8px;
+      --ss:0 2px 20px rgba(12,27,42,.06);--sc:0 4px 40px rgba(12,27,42,.08);--se:0 8px 60px rgba(12,27,42,.12);
+      --tr:.35s cubic-bezier(.25,.46,.45,.94);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);color:var(--g900);background:var(--cream);line-height:1.65;overflow-x:hidden}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    /* HEADER */
+    .header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:all .4s}
+    .header.scrolled{background:rgba(12,27,42,.95);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.15)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1120px;margin:0 auto}
+    .header-brand{display:flex;flex-direction:column;gap:2px}
+    .header-name{font-family:var(--fd);font-size:1.15rem;font-weight:600;color:#fff}
+    .header-title{font-size:.7rem;color:var(--gold-light);letter-spacing:.12em;text-transform:uppercase}
+    .header-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;padding:10px 22px;border-radius:var(--r);font-size:.85rem;font-weight:600;text-decoration:none;transition:var(--tr)}
+    .header-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+    .header-cta svg{width:16px;height:16px}
+    /* HERO */
+    .hero{position:relative;min-height:auto;display:flex;align-items:center;background:linear-gradient(165deg,var(--navy),var(--navy-mid) 55%,var(--navy-light));overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;right:-20%;width:70%;height:120%;background:radial-gradient(ellipse,rgba(46,107,158,.12),transparent 70%);pointer-events:none}
+    .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:110px 0 60px}
+    .hero-content{max-width:520px}
+    .hero-label{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px}
+    .hero-label svg{flex-shrink:0;stroke:var(--gold)}
+    .hero-heading{font-family:var(--fd);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:600;color:#fff;line-height:1.2;margin-bottom:16px}
+    .hero-heading em{font-style:normal;color:var(--gold-light)}
+    .hero-sub{font-size:1.02rem;color:var(--g300);line-height:1.7;margin-bottom:28px;font-weight:300;max-width:440px}
+    .hero-cta-group{display:flex;flex-direction:column;gap:12px;max-width:320px}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;padding:14px 28px;border-radius:var(--r);font-size:.88rem;font-weight:600;text-decoration:none;transition:var(--tr);white-space:nowrap}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(184,151,106,.3)}
+    .btn-primary svg{width:20px;height:20px}
+    .hero-crm{font-size:.75rem;color:var(--g500);text-align:center;letter-spacing:.05em}
+    .hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+    .hero-photo-accent{position:absolute;top:16px;left:calc(50% - 180px);width:340px;height:430px;border:2px solid var(--gold);border-radius:var(--rl);opacity:.35;z-index:0}
+    .hero-photo-frame{position:relative;z-index:1;width:320px;height:410px;border-radius:var(--rl);overflow:hidden;box-shadow:var(--se)}
+    /* TRUST */
+    .trust-bar{background:var(--white);border-bottom:1px solid var(--g200);padding:20px 0}
+    .trust-items{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:10px;font-size:.82rem;color:var(--g700);font-weight:500}
+    .trust-icon{width:36px;height:36px;border-radius:50%;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .trust-icon svg{width:16px;height:16px;stroke:var(--gold);stroke-width:2;fill:none}
+    /* SHARED */
+    .section-label{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
+    .section-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+    .section-heading{font-family:var(--fd);font-size:clamp(1.7rem,2.8vw,2.2rem);font-weight:600;color:var(--navy);line-height:1.25;margin-bottom:16px}
+    .section-text{font-size:.92rem;color:var(--g700);line-height:1.75;margin-bottom:12px;font-weight:300}
+    /* ABOUT */
+    .about{padding:70px 0;background:var(--cream)}
+    .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    /* Credential carousel */
+    .cred-carousel{position:relative;margin-top:24px;overflow:hidden;border-radius:var(--rl)}
+    .cred-slides{display:flex;transition:transform .45s ease}
+    .cred-slide{min-width:100%;padding:0 2px;box-sizing:border-box}
+    .credential{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:var(--white);border-radius:var(--rl);box-shadow:var(--ss);border-left:3px solid var(--gold)}
+    .credential-icon{width:36px;height:36px;border-radius:50%;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .credential-icon svg{width:16px;height:16px;stroke:var(--gold);stroke-width:2;fill:none}
+    .credential-text{font-size:.88rem;color:var(--g700);line-height:1.5}
+    .credential-text strong{color:var(--navy);font-weight:600}
+    .cred-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+    .cred-dot{width:7px;height:7px;border-radius:50%;background:var(--g300);border:none;cursor:pointer;transition:var(--tr);padding:0}
+    .cred-dot.active{background:var(--gold);transform:scale(1.3)}
+    /* About carousel */
+    .about-visual{position:relative}
+    .about-carousel{border-radius:var(--rl);overflow:hidden;box-shadow:var(--sc);position:relative;aspect-ratio:3/4}
+    .about-carousel img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s}
+    .about-carousel img.active{opacity:1}
+    .carousel-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
+    .carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--g300);border:none;cursor:pointer;transition:var(--tr);padding:0}
+    .carousel-dot.active{background:var(--gold);transform:scale(1.3)}
+    /* SYMPTOMS */
+    .symptoms{padding:70px 0;background:var(--white)}
+    .symptoms-header{text-align:center;max-width:600px;margin:0 auto 36px}
+    .symptom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:780px;margin:0 auto 32px}
+    .symptom-btn{display:flex;align-items:center;gap:10px;padding:12px 16px;border:2px solid var(--g200);border-radius:var(--rl);background:var(--white);cursor:pointer;transition:var(--tr);font-size:.85rem;color:var(--g700);font-family:var(--fb);font-weight:500;text-align:left}
+    .symptom-btn:hover{border-color:var(--gold);background:var(--gold-muted)}
+    .symptom-btn.selected{border-color:var(--gold);background:var(--gold-muted);color:var(--navy);font-weight:600}
+    .symptom-btn svg{width:18px;height:18px;stroke:var(--gold);stroke-width:2;fill:none;flex-shrink:0}
+    .symptom-result{max-width:700px;margin:0 auto;display:none;animation:fadeInUp .5s ease forwards}
+    .symptom-result.visible{display:block}
+    .symptom-result-card{background:var(--cream);border-radius:var(--rl);padding:24px;border-left:4px solid var(--gold);margin-bottom:12px}
+    .symptom-result-title{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .symptom-result-text{font-size:.88rem;color:var(--g700);line-height:1.7;font-weight:300}
+    .symptom-cta{text-align:center;margin-top:24px}
+    /* BENEFITS */
+    .benefits{padding:70px 0;background:var(--cream)}
+    .benefits-header{text-align:center;max-width:600px;margin:0 auto 40px}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .benefit-card{background:var(--white);border-radius:var(--rl);padding:32px 24px;text-align:center;box-shadow:var(--ss);transition:var(--tr)}
+    .benefit-card:hover{transform:translateY(-4px);box-shadow:var(--sc)}
+    .benefit-icon{width:56px;height:56px;border-radius:50%;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .benefit-icon svg{width:24px;height:24px;stroke:var(--gold);stroke-width:1.8;fill:none}
+    .benefit-title{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .benefit-text{font-size:.85rem;color:var(--g500);line-height:1.7;font-weight:300}
+    /* SERVICES */
+    .services{padding:70px 0;background:var(--white)}
+    .services-header{text-align:center;max-width:600px;margin:0 auto 40px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card{background:var(--cream);border-radius:var(--rl);padding:30px 24px;transition:var(--tr);border:1px solid transparent;position:relative;overflow:hidden}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:var(--tr)}
+    .service-card:hover{border-color:var(--g200);box-shadow:var(--sc);transform:translateY(-4px)}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-icon{width:44px;height:44px;border-radius:var(--r);background:var(--gold-muted);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .service-icon svg{width:20px;height:20px;stroke:var(--gold);stroke-width:1.8;fill:none}
+    .service-title{font-family:var(--fd);font-size:1.08rem;font-weight:600;color:var(--navy);margin-bottom:8px}
+    .service-desc{font-size:.85rem;color:var(--g500);line-height:1.7;font-weight:300}
+    /* TESTIMONIALS COMBINED */
+    .testimonials{padding:70px 0;background:var(--white)}
+    .testimonials-header{text-align:center;max-width:650px;margin:0 auto 36px}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto 48px}
+    .why-card{background:var(--cream);border-radius:var(--rl);padding:24px 18px;text-align:center;border:1px solid var(--g200)}
+    .why-icon{width:44px;height:44px;border-radius:50%;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+    .why-icon svg{width:20px;height:20px;stroke:var(--gold);stroke-width:2;fill:none}
+    .why-title{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .why-text{font-size:.8rem;color:var(--g500);line-height:1.6;font-weight:300}
+    .reviews-title{font-family:var(--fd);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:600;color:var(--navy);text-align:center;margin-bottom:28px}
+    .testimonial-track{position:relative;overflow:hidden;max-width:800px;margin:0 auto}
+    .testimonial-slides{display:flex;transition:transform .5s ease}
+    .testimonial-slide{min-width:100%;padding:0 12px;box-sizing:border-box}
+    .testimonial-card{background:var(--cream);border-radius:var(--rl);padding:28px 24px;position:relative}
+    .testimonial-card::before{content:'\201C';position:absolute;top:12px;left:20px;font-family:var(--fd);font-size:2.5rem;color:var(--gold);opacity:.3;line-height:1}
+    .testimonial-text{font-size:.9rem;color:var(--g700);line-height:1.75;font-weight:300;padding-top:8px;overflow:hidden;transition:max-height .4s}
+    .testimonial-text.clamped{max-height:96px}
+    .testimonial-readmore{display:none;background:none;border:none;color:var(--gold);font-weight:600;font-size:.8rem;cursor:pointer;margin-top:6px;font-family:var(--fb);padding:0}
+    .testimonial-readmore.visible{display:inline-block}
+    .testimonial-name{font-weight:600;color:var(--navy);margin-top:12px;font-size:.85rem}
+    .testimonial-stars{color:var(--gold);margin-top:4px;font-size:.85rem;letter-spacing:2px}
+    .testimonial-nav{display:flex;justify-content:center;gap:10px;margin-top:24px}
+    .testimonial-nav button{width:36px;height:36px;border-radius:50%;border:1px solid var(--g200);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
+    .testimonial-nav button:hover{border-color:var(--gold);background:var(--gold-muted)}
+    .testimonial-nav button svg{width:14px;height:14px;stroke:var(--g700);stroke-width:2;fill:none}
+    .testimonial-dots{display:flex;gap:6px;justify-content:center;margin-top:16px}
+    .t-dot{width:7px;height:7px;border-radius:50%;background:var(--g300);border:none;cursor:pointer;transition:var(--tr);padding:0}
+    .t-dot.active{background:var(--gold);transform:scale(1.3)}
+    /* EINSTEIN */
+    .einstein{padding:60px 0;background:linear-gradient(165deg,var(--navy),var(--navy-mid));position:relative;overflow:hidden}
+    .einstein::before{content:'';position:absolute;top:-50%;right:-30%;width:60%;height:200%;background:radial-gradient(ellipse,rgba(184,151,106,.06),transparent 60%);pointer-events:none}
+    .einstein-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .einstein-map{border-radius:var(--rl);overflow:hidden;box-shadow:var(--se)}
+    .einstein-map iframe{width:100%;height:320px;border:0;display:block}
+    .einstein .section-label{color:var(--gold-light)}
+    .einstein .section-heading{color:#fff}
+    .einstein-text{font-size:.95rem;color:var(--g300);line-height:1.75;margin-bottom:10px;font-weight:300}
+    .einstein-address{font-size:.82rem;color:var(--g500);margin-top:20px}
+    /* CTA */
+    .cta-section{padding:70px 0;background:var(--cream)}
+    .cta-card{background:var(--white);border-radius:var(--rl);padding:48px 40px;box-shadow:var(--sc);text-align:center;max-width:640px;margin:0 auto;position:relative;overflow:hidden}
+    .cta-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+    .cta-heading{font-family:var(--fd);font-size:clamp(1.5rem,2.5vw,1.9rem);font-weight:600;color:var(--navy);margin-bottom:12px}
+    .cta-text{font-size:.92rem;color:var(--g500);margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7;font-weight:300}
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#fff;padding:16px 36px;border-radius:var(--r);font-size:.95rem;font-weight:600;text-decoration:none;transition:var(--tr)}
+    .cta-btn:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(184,151,106,.3)}
+    .cta-btn svg{width:20px;height:20px}
+    .cta-note{margin-top:12px;font-size:.75rem;color:var(--g500)}
+    /* FOOTER */
+    .footer{background:var(--navy);padding:36px 0 24px}
+    .footer-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap}
+    .footer-brand{max-width:320px}
+    .footer-name{font-family:var(--fd);font-size:1rem;font-weight:600;color:#fff;margin-bottom:4px}
+    .footer-specialty{font-size:.72rem;color:var(--gold-light);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+    .footer-crm{font-size:.78rem;color:var(--g500);line-height:1.6}
+    .footer-info{text-align:right}
+    .footer-info-item{font-size:.78rem;color:var(--g500);margin-bottom:5px}
+    .footer-info-item a{color:var(--gold-light);text-decoration:none}
+    .footer-divider{width:100%;height:1px;background:rgba(255,255,255,.08);margin:20px 0 16px}
+    .footer-legal{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .footer-legal-text{font-size:.7rem;color:var(--g500);line-height:1.5;max-width:600px}
+    .footer-year{font-size:.7rem;color:var(--g500)}
+    /* WA */
+    .whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:var(--tr);text-decoration:none}
+    .whatsapp-float:hover{transform:scale(1.08)}
+    .whatsapp-float svg{width:26px;height:26px;fill:#fff}
+    /* ANIM */
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+    .reveal.active{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .hero-content>*{opacity:0;animation:fadeInUp .7s cubic-bezier(.16,1,.3,1) forwards}
+    .hero-content>*:nth-child(1){animation-delay:.2s}
+    .hero-content>*:nth-child(2){animation-delay:.35s}
+    .hero-content>*:nth-child(3){animation-delay:.5s}
+    .hero-content>*:nth-child(4){animation-delay:.65s}
+    .hero-visual{opacity:0;animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards;animation-delay:.5s}
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;text-align:center;padding:100px 0 60px;gap:32px}
+      .hero-content{max-width:100%}.hero-sub{max-width:100%}
+      .hero-cta-group{max-width:100%;align-items:center}
+      .hero-visual{justify-content:center}
+      .hero-photo-frame{width:240px;height:310px}
+      .hero-photo-accent{width:260px;height:330px;left:calc(50% - 140px);top:10px}
+      .hero-label{justify-content:center}
+      .about-inner,.einstein-inner{grid-template-columns:1fr;gap:36px}
+      .einstein-map iframe{height:220px}
+      .services-grid,.benefits-grid{grid-template-columns:1fr;gap:12px}
+      .why-grid{grid-template-columns:1fr 1fr;gap:12px}
+      .symptom-grid{grid-template-columns:1fr 1fr}
+      .footer-inner{flex-direction:column;gap:20px}.footer-info{text-align:left}
+      .footer-legal{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:600px){
+      .header-inner{padding:12px 16px}.header-name{font-size:1rem}
+      .header-cta{padding:8px 14px;font-size:.75rem}.header-cta span{display:none}
+      .hero{min-height:auto}.hero-inner{padding:90px 0 40px}.hero-heading{font-size:1.75rem}
+      .hero-photo-frame{width:190px;height:250px}
+      .hero-photo-accent{width:210px;height:270px;left:calc(50% - 115px);top:8px}
+      .trust-items{gap:16px}.trust-item{font-size:.75rem}
+      .about,.services,.benefits,.symptoms,.testimonials{padding:48px 0}
+      .about-carousel{aspect-ratio:16/10}
+      .symptom-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .service-card,.benefit-card{padding:24px 18px}
+      .einstein{padding:48px 0}.cta-section{padding:48px 0}.cta-card{padding:32px 20px}
+      .credential{padding:12px 16px}
+      .whatsapp-float{width:48px;height:48px;bottom:16px;right:16px}
+      .whatsapp-float svg{width:22px;height:22px}
+    }
+  </style>
+</head>
+<body>
+
+<header class="header" id="main-header"><div class="header-inner">
+  <div class="header-brand"><span class="header-name">Dr. Bruno Brito Mattar</span><span class="header-title">Ortopedia &bull; Quadril</span></div>
+  <a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta." class="header-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Agendar Consulta</span></a>
+</div></header>
+
+<section class="hero"><div class="container"><div class="hero-inner">
+  <div class="hero-content">
+    <div class="hero-label"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <strong>Hospital Albert Einstein</strong></div>
+    <h1 class="hero-heading">Ortopedista Especialista em <em>Quadril</em></h1>
+    <p class="hero-sub">Prazer, Dr Bruno! Atendo no hospital Israelita Albert Einstein, em São Paulo. Meu atendimento tem cuidado individualizado para o diagnóstico e tratamento de patologias do quadril.</p>
+    <div class="hero-cta-group">
+      <span class="hero-crm">CRM 159677 | RQE 87264</span>
+      <a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta." class="btn-primary"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar via WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-visual"><div class="hero-photo-accent"></div><div class="hero-photo-frame"><img src="https://i.ibb.co/G4zqrZTy/2026-03-11.webp" alt="Dr. Bruno Brito Mattar" style="width:100%;height:100%;object-fit:cover;object-position:center top;"></div></div>
+</div></div></section>
+
+<section class="trust-bar"><div class="container"><div class="trust-items">
+  <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>CRM 159677 | RQE 87264</div>
+  <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 6v4"/><path d="M14 8h-4"/><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg></div>Hospital Albert Einstein</div>
+  <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6h.67a5.33 5.33 0 0 0 5.33-5.33v-.67"/><circle cx="20" cy="16" r="2"/></svg></div>Ortopedia e Traumatologia</div>
+  <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>São Paulo - SP</div>
+</div></div></section>
+
+<section class="about" id="sobre"><div class="container"><div class="about-inner">
+  <div class="about-text-col reveal">
+    <div class="section-label">Me conheça melhor</div>
+    <h2 class="section-heading">Dr. Bruno Brito Mattar</h2>
+    <p class="section-text">Sou médico ortopedista, pai e casado. Formei-me em Medicina pela Universidade Federal de Juiz de Fora e fiz minha residência em Cirurgia Ortopédica na UNIFESP, uma das mais reconhecidas do país. Hoje, atendo no Hospital Israelita Albert Einstein, em São Paulo.</p>
+    <p class="section-text">Minha especialidade é o quadril. Acredito que cada paciente merece uma avaliação individualizada, com escuta atenta e um plano de tratamento que faça sentido para a sua realidade.</p>
+    <div class="cred-carousel" id="credCarousel">
+      <div class="cred-slides" id="credSlides">
+        <div class="cred-slide"><div class="credential"><div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div class="credential-text"><strong>Formação Acadêmica</strong><br>Medicina - Univ. Federal de Juiz de Fora<br>Residência em Cirurgia Ortopédica - UNIFESP</div></div></div>
+        <div class="cred-slide"><div class="credential"><div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M12 6v4"/><path d="M14 8h-4"/><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><path d="M6 18h2"/><path d="M10 18h2"/><path d="M14 18h2"/><path d="M6 14h2"/><path d="M10 14h2"/><path d="M14 14h2"/></svg></div><div class="credential-text"><strong>Hospital Israelita Albert Einstein</strong><br>São Paulo - SP</div></div></div>
+        <div class="cred-slide"><div class="credential"><div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6h.67a5.33 5.33 0 0 0 5.33-5.33v-.67"/><circle cx="20" cy="16" r="2"/></svg></div><div class="credential-text"><strong>Especialista em Quadril</strong><br>Membro da Sociedade Brasileira de Quadril<br>Membro Titular da SBOT</div></div></div>
+        <div class="cred-slide"><div class="credential"><div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="credential-text"><strong>CRM 159677 | RQE 87264</strong><br>Médico Cirurgião Ortopédico</div></div></div>
+      </div>
+      <div class="cred-dots" id="credDots"></div>
+    </div>
+  </div>
+  <div class="about-visual reveal reveal-delay-2">
+    <div class="about-carousel" id="aboutCarousel">
+      <img src="https://iili.io/q6fMEBa.jpg" alt="Dr. Bruno" class="active"><img src="https://iili.io/q6fjM5x.jpg" alt="Dr. Bruno"><img src="https://iili.io/q6fj1Ub.jpg" alt="Dr. Bruno"><img src="https://iili.io/q6fje0g.png" alt="Dr. Bruno"><img src="https://iili.io/q6fjWbV.png" alt="Dr. Bruno"><img src="https://iili.io/q6fjUeR.jpg" alt="Dr. Bruno"><img src="https://iili.io/q6fjsqX.jpg" alt="Dr. Bruno"><img src="https://iili.io/q6fwjp4.jpg" alt="Dr. Bruno"><img src="https://iili.io/q6fwpaa.jpg" alt="Dr. Bruno">
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</div></div></section>
+
+<section class="symptoms" id="sintomas"><div class="container">
+  <div class="symptoms-header reveal">
+    <div class="section-label" style="justify-content:center;">Autoavaliação</div>
+    <h2 class="section-heading">O que você está sentindo?</h2>
+    <p class="section-text" style="text-align:center;">Selecione um ou mais sintomas para entender o que pode estar acontecendo com o seu quadril.</p>
+  </div>
+  <div class="symptom-grid reveal" id="symptomGrid">
+    <button class="symptom-btn" data-symptom="dor_virilha"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Dor na virilha</button>
+    <button class="symptom-btn" data-symptom="dor_lateral"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Dor lateral no quadril</button>
+    <button class="symptom-btn" data-symptom="dificuldade_andar"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Dificuldade para caminhar</button>
+    <button class="symptom-btn" data-symptom="rigidez"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Rigidez ao levantar</button>
+    <button class="symptom-btn" data-symptom="estalo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Estalos no quadril</button>
+    <button class="symptom-btn" data-symptom="dor_noturna"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>Dor noturna ao deitar</button>
+  </div>
+  <div class="symptom-result" id="symptomResult"></div>
+  <div class="symptom-cta" id="symptomCta" style="display:none">
+    <p style="font-size:.9rem;color:var(--g700);margin-bottom:16px;font-weight:300;">Esses sintomas merecem avaliação profissional. Quanto antes o diagnóstico, melhores as chances de um tratamento eficaz.</p>
+    <a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta.%20Estou%20sentindo%20dores%20no%20quadril." class="btn-primary"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Agendar minha consulta</a>
+  </div>
+</div></section>
+
+<section class="benefits"><div class="container">
+  <div class="benefits-header reveal">
+    <div class="section-label" style="justify-content:center;">Qualidade de Vida</div>
+    <h2 class="section-heading">Benefícios de cuidar do seu quadril</h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><h3 class="benefit-title">Mobilidade e Independência</h3><p class="benefit-text">Caminhar, subir escadas e brincar com os netos sem dor. Um quadril saudável preserva sua autonomia no dia a dia.</p></div>
+    <div class="benefit-card reveal reveal-delay-1"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3 class="benefit-title">Sono e Bem-estar</h3><p class="benefit-text">Dores no quadril atrapalham o sono e o humor. Com o tratamento certo, você volta a dormir bem e ter disposição.</p></div>
+    <div class="benefit-card reveal reveal-delay-2"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="benefit-title">Prevenção</h3><p class="benefit-text">Diagnóstico precoce evita cirurgias complexas. Muitas condições podem ser tratadas de forma conservadora quando identificadas cedo.</p></div>
+  </div>
+</div></section>
+
+<section class="services" id="especialidades"><div class="container">
+  <div class="services-header reveal">
+    <div class="section-label" style="justify-content:center;">Áreas de Atuação</div>
+    <h2 class="section-heading">Minhas Especialidades</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2"/><circle cx="12" cy="10" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg></div><h3 class="service-title">Ortopedia de Quadril</h3><p class="service-desc">Avaliação e tratamento de artrose, impacto femoroacetabular, necrose avascular e lesões labrais.</p></div>
+    <div class="service-card reveal reveal-delay-1"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 2l-3 3"/><path d="M15 5l-1.5 1.5"/><path d="M2 18l3-3"/><path d="M5 15l1.5-1.5"/><path d="M13.5 6.5L6.5 13.5"/><circle cx="17" cy="17" r="3"/></svg></div><h3 class="service-title">Cirurgia de Quadril</h3><p class="service-desc">Artroplastia (prótese), artroscopia e tratamento de fraturas no Hospital Albert Einstein.</p></div>
+    <div class="service-card reveal reveal-delay-2"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 4a2 2 0 1 0-4 0v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4z"/><path d="M16 8v2a4 4 0 0 1-4 4H8"/><path d="M8 8v2a4 4 0 0 0 4 4h4"/><path d="M10 18v4"/><path d="M14 18v4"/></svg></div><h3 class="service-title">Ortopedia Geral</h3><p class="service-desc">Avaliação musculoesquelética completa e encaminhamento para o tratamento mais adequado.</p></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS: Why + Reviews combined -->
+<section class="testimonials" id="depoimentos"><div class="container">
+  <div class="testimonials-header reveal">
+    <div class="section-label" style="justify-content:center;">Confiança</div>
+    <h2 class="section-heading">Porque escolher o Dr. Bruno Mattar?</h2>
+  </div>
+  <div class="why-grid reveal">
+    <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 6v4"/><path d="M14 8h-4"/><path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg></div><h3 class="why-title">Hospital Einstein</h3><p class="why-text">Atendimento em um dos melhores hospitais da América Latina.</p></div>
+    <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h3 class="why-title">Formação Sólida</h3><p class="why-text">Residência na UNIFESP e membro da Sociedade Brasileira de Quadril e SBOT.</p></div>
+    <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3 class="why-title">Cuidado Humano</h3><p class="why-text">Atendimento empático, atencioso e com escuta ativa para cada paciente.</p></div>
+    <div class="why-card"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6h.67a5.33 5.33 0 0 0 5.33-5.33v-.67"/><circle cx="20" cy="16" r="2"/></svg></div><h3 class="why-title">Pós-operatório</h3><p class="why-text">Acompanhamento dedicado em todas as etapas da recuperação.</p></div>
+  </div>
+  <h3 class="reviews-title reveal">O que os pacientes têm a dizer:</h3>
+  <div class="testimonial-track reveal" id="testimonialTrack">
+    <div class="testimonial-slides" id="testimonialSlides"></div>
+  </div>
+  <div class="testimonial-nav" id="testimonialNav">
+    <button id="tPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button id="tNext" aria-label="Próximo"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </div>
+  <div class="testimonial-dots" id="testimonialDots"></div>
+</div></section>
+
+<section class="einstein"><div class="container"><div class="einstein-inner reveal">
+  <div class="einstein-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.167936647498!2d-46.71440542378665!3d-23.598440663833696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce574183a77237%3A0x66b4b1b159b9c4e5!2sHospital%20Israelita%20Albert%20Einstein!5e0!3m2!1spt-BR!2sbr!4v1711300000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Hospital Albert Einstein"></iframe></div>
+  <div class="einstein-content">
+    <div class="section-label">Local de Atendimento</div>
+    <h2 class="section-heading" style="color:#fff;">Onde você será atendido:</h2>
+    <p class="einstein-text">O Hospital Israelita Albert Einstein é reconhecido internacionalmente pela excelência em saúde. Aqui, conto com infraestrutura completa para diagnóstico e tratamento ortopédico nos mais altos padrões.</p>
+    <p class="einstein-address">Av. Albert Einstein, 627 - Morumbi, São Paulo - SP</p>
+  </div>
+</div></div></section>
+
+<section class="cta-section" id="agendar"><div class="container"><div class="cta-card reveal">
+  <h2 class="cta-heading">Vamos conversar?</h2>
+  <p class="cta-text">Entre em contato pelo WhatsApp para agendar sua avaliação comigo no Hospital Albert Einstein.</p>
+  <a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta." class="cta-btn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Falar pelo WhatsApp</a>
+  <p class="cta-note">Atendimento de segunda a sexta-feira</p>
+</div></div></section>
+
+<footer class="footer"><div class="container">
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="footer-name">Dr. Bruno Brito Mattar</div><div class="footer-specialty">Ortopedia e Traumatologia</div><div class="footer-crm">CRM 159677 - Médico<br>RQE 87264 - Ortopedia e Traumatologia</div></div>
+    <div class="footer-info"><div class="footer-info-item">Hospital Israelita Albert Einstein</div><div class="footer-info-item">Av. Albert Einstein, 627 - Morumbi, SP</div><div class="footer-info-item"><a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta.">WhatsApp</a></div></div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-legal"><p class="footer-legal-text">Este site tem caráter informativo e não substitui a consulta médica presencial. Responsável técnico: Dr. Bruno Brito Mattar - CRM 159677 | RQE 87264.</p><span class="footer-year">&copy; 2026</span></div>
+</div></footer>
+
+<a href="https://wa.me/5549991990447?text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20consulta." class="whatsapp-float" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>
+window.addEventListener('scroll',function(){document.getElementById('main-header').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
+var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('active');obs.unobserve(en.target)}})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+// About photo carousel
+(function(){var c=document.getElementById('aboutCarousel'),d=document.getElementById('carouselDots'),imgs=c.querySelectorAll('img'),cur=0,tot=imgs.length;for(var i=0;i<tot;i++){var dot=document.createElement('button');dot.className='carousel-dot'+(i===0?' active':'');dot.dataset.index=i;dot.addEventListener('click',function(){go(+this.dataset.index)});d.appendChild(dot)}function go(n){imgs[cur].classList.remove('active');d.children[cur].classList.remove('active');cur=n;imgs[cur].classList.add('active');d.children[cur].classList.add('active')}setInterval(function(){go((cur+1)%tot)},4000);var sx=0;c.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});c.addEventListener('touchend',function(e){var diff=sx-e.changedTouches[0].clientX;if(Math.abs(diff)>40){diff>0?go((cur+1)%tot):go((cur-1+tot)%tot)}},{passive:true})})();
+
+// Credential carousel
+(function(){var sl=document.getElementById('credSlides'),d=document.getElementById('credDots'),slides=sl.querySelectorAll('.cred-slide'),cur=0,tot=slides.length;for(var i=0;i<tot;i++){var dot=document.createElement('button');dot.className='cred-dot'+(i===0?' active':'');dot.dataset.index=i;dot.addEventListener('click',function(){go(+this.dataset.index)});d.appendChild(dot)}function go(n){cur=n;sl.style.transform='translateX(-'+cur*100+'%)';d.querySelectorAll('.cred-dot').forEach(function(dd,i){dd.classList.toggle('active',i===cur)})}setInterval(function(){go((cur+1)%tot)},3500);var sx=0;sl.parentElement.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});sl.parentElement.addEventListener('touchend',function(e){var diff=sx-e.changedTouches[0].clientX;if(Math.abs(diff)>40){diff>0?go((cur+1)%tot):go((cur-1+tot)%tot)}},{passive:true})})();
+
+// Symptoms
+(function(){var data={dor_virilha:{title:'Dor na virilha',text:'Um dos sinais mais comuns de problemas no quadril. Pode indicar artrose, lesão labral ou impacto femoroacetabular. Uma avaliação clínica e exames de imagem identificam a causa com precisão.'},dor_lateral:{title:'Dor lateral no quadril',text:'Geralmente associada à bursite trocantérica ou tendinopatia glútea. Comum em mulheres acima dos 50 anos. O tratamento pode incluir fisioterapia, infiltração ou procedimentos minimamente invasivos.'},dificuldade_andar:{title:'Dificuldade para caminhar',text:'Pode indicar artrose avançada, necrose da cabeça femoral ou fratura por fragilidade. Esse sintoma tende a piorar progressivamente. Quanto antes a avaliação, maiores as opções de tratamento.'},rigidez:{title:'Rigidez ao levantar',text:'Sinal clássico de artrose. A rigidez que melhora com o movimento indica desgaste da cartilagem. O acompanhamento permite controlar a progressão e manter a qualidade de vida.'},estalo:{title:'Estalos no quadril',text:'Podem ser causados pelo tendão do psoas ou lesões labrais. Quando acompanhados de dor, merecem investigação para diferenciar um achado benigno de uma condição que precisa de tratamento.'},dor_noturna:{title:'Dor noturna ao deitar',text:'Pode indicar necrose avascular, artrose ou processo inflamatório ativo. É um sintoma que merece atenção especial e sugere necessidade de intervenção precoce.'}};var grid=document.getElementById('symptomGrid'),result=document.getElementById('symptomResult'),cta=document.getElementById('symptomCta');grid.addEventListener('click',function(e){var btn=e.target.closest('.symptom-btn');if(!btn)return;btn.classList.toggle('selected');var sel=grid.querySelectorAll('.selected');if(!sel.length){result.innerHTML='';result.classList.remove('visible');cta.style.display='none';return}var h='';sel.forEach(function(s){var d2=data[s.dataset.symptom];if(d2)h+='<div class="symptom-result-card"><div class="symptom-result-title">'+d2.title+'</div><div class="symptom-result-text">'+d2.text+'</div></div>'});result.innerHTML=h;result.classList.add('visible');cta.style.display='block'})})();
+
+// Testimonials
+(function(){var reviews=[{name:'Sandra Lima',text:'Foi uma experiência muito boa ser atendida e operada pelo Dr Bruno. Muito empático, gentil e amável. O atendimento pós operatório foi muito bom.'},{name:'Nome Reservado',text:'Espetacular! Cuidou da minha mãe como se fosse a própria família dele. O pós atendimento foi espetacular, muito eficiente e carinhoso. Fez toda a diferença na recuperação da minha mãe de 83 anos.'},{name:'Elaine Camilo',text:'Médico muito bom, atencioso. Fiz infiltração de quadril com ele e estou fazendo acompanhamento médico.'},{name:'Eduardo Crespi',text:'Fiz uma cirurgia com o Dr. Bruno e fiquei extremamente satisfeito com todo o atendimento. Ele é um excelente profissional, muito atencioso e cuidadoso. Durante todo o processo, me senti muito seguro e bem assistido. Recomendo o Dr. Bruno sem hesitar!'},{name:'Nome Protegido',text:'Fiz uma cirurgia com o Dr. Bruno, um excelente profissional, muito atencioso e cuidadoso com seus pacientes. Ele tem nos dado todo o suporte no pós-cirúrgico.'},{name:'Maria Antonietta Addesso',text:'Dr. Bruno fez um trabalho excelente, não poderia ser melhor. Amei os resultados, sem restrições nenhuma. Foi perfeito.'},{name:'Marcela O. N.',text:'Excelência e assertividade do primeiro atendimento até o pós procedimento. Meus agradecimentos ao Dr Bruno e equipe pela atenção e cuidado.'},{name:'Kaléria Ribeiro Cortez',text:'Excelente médico. Atencioso e cuidadoso. Recomendo.'},{name:'Silvio Lemos',text:'Gostaria de expressar minha profunda gratidão ao Dr. Bruno pela excelência no atendimento e pelo profissionalismo demonstrado durante todo o tratamento da minha esposa. Sua competência como ortopedista especialista em bacia trouxe segurança e confiança em um momento delicado. Além do conhecimento técnico admirável, destacou-se pela atenção, paciência em explicar cada etapa do tratamento e pelo cuidado humano. Profissionais assim fazem toda a diferença na recuperação e na vida das pessoas. Gratidão pelo cuidado e dedicação.'},{name:'Ana Paula Ramos de Oliveira',text:'Minha experiência com o Dr. Bruno foi excepcional. Desde o primeiro contato, demonstrou empatia e atenção às minhas preocupações, explicando cada etapa do tratamento de forma clara e acessível. Além disso, transmitiu confiança e profissionalismo, o que me deixou tranquila e bem informada. A equipe da clínica também foi muito organizada e acolhedora, tornando todo o processo ainda mais positivo. Recomendo o Dr. Bruno a todos que buscam um médico dedicado e humano.'}];
+var slides=document.getElementById('testimonialSlides'),dots=document.getElementById('testimonialDots'),cur=0,tot=reviews.length,autoTimer=null,paused=false,hoverPaused=false;
+reviews.forEach(function(r,i){var div=document.createElement('div');div.className='testimonial-slide';div.innerHTML='<div class="testimonial-card"><div class="testimonial-text clamped">'+r.text+'</div><button class="testimonial-readmore" data-index="'+i+'">Ler mais</button><div class="testimonial-name">'+r.name+'</div><div class="testimonial-stars">★★★★★</div></div>';slides.appendChild(div);var dot=document.createElement('button');dot.className='t-dot'+(i===0?' active':'');dot.dataset.index=i;dot.addEventListener('click',function(){goTo(+this.dataset.index)});dots.appendChild(dot)});
+function checkOverflows(){slides.querySelectorAll('.testimonial-slide').forEach(function(sl){var txt=sl.querySelector('.testimonial-text');var btn=sl.querySelector('.testimonial-readmore');if(!txt||!btn)return;txt.classList.add('clamped');txt.style.maxHeight='';if(txt.scrollHeight>txt.clientHeight+2){btn.classList.add('visible')}else{btn.classList.remove('visible');txt.classList.remove('clamped')}})}
+setTimeout(checkOverflows,100);window.addEventListener('resize',checkOverflows);
+function goTo(n){cur=n;slides.style.transform='translateX(-'+cur*100+'%)';dots.querySelectorAll('.t-dot').forEach(function(d,i){d.classList.toggle('active',i===cur)});setTimeout(checkOverflows,600)}
+function startAuto(){autoTimer=setInterval(function(){if(!paused&&!hoverPaused)goTo((cur+1)%tot)},8000)}startAuto();
+var prevBtn=document.getElementById('tPrev'),nextBtn=document.getElementById('tNext');
+prevBtn.addEventListener('click',function(){goTo((cur-1+tot)%tot)});
+nextBtn.addEventListener('click',function(){goTo((cur+1)%tot)});
+prevBtn.addEventListener('mouseenter',function(){hoverPaused=true});
+prevBtn.addEventListener('mouseleave',function(){hoverPaused=false});
+nextBtn.addEventListener('mouseenter',function(){hoverPaused=true});
+nextBtn.addEventListener('mouseleave',function(){hoverPaused=false});
+slides.addEventListener('click',function(e){var btn=e.target.closest('.testimonial-readmore');if(!btn)return;var card=btn.closest('.testimonial-card'),txt=card.querySelector('.testimonial-text');if(txt.classList.contains('clamped')){txt.classList.remove('clamped');txt.style.maxHeight='none';btn.textContent='Ler menos';paused=true;clearInterval(autoTimer)}else{txt.classList.add('clamped');txt.style.maxHeight='';btn.textContent='Ler mais';paused=false;startAuto()}});
+var sx=0;slides.parentElement.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});slides.parentElement.addEventListener('touchend',function(e){var diff=sx-e.changedTouches[0].clientX;if(Math.abs(diff)>40){diff>0?goTo((cur+1)%tot):goTo((cur-1+tot)%tot)}},{passive:true})})();
+</script>
+</body>
+</html>
