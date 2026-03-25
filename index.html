@@ -21,9 +21,10 @@
       --tr:.35s cubic-bezier(.25,.46,.45,.94);
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--fb);color:var(--g900);background:var(--cream);line-height:1.65;overflow-x:hidden}
-    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--fb);color:var(--g900);background:var(--cream);line-height:1.65;overflow-x:hidden;max-width:100vw}
+    img,video,iframe{max-width:100%;height:auto}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px;width:100%;overflow-wrap:break-word;word-wrap:break-word}
     /* HEADER */
     .header{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;transition:all .4s}
     .header.scrolled{background:rgba(12,27,42,.95);backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.15)}
@@ -64,7 +65,7 @@
     .section-heading{font-family:var(--fd);font-size:clamp(1.7rem,2.8vw,2.2rem);font-weight:600;color:var(--navy);line-height:1.25;margin-bottom:16px}
     .section-text{font-size:.92rem;color:var(--g700);line-height:1.75;margin-bottom:12px;font-weight:300}
     /* ABOUT */
-    .about{padding:70px 0;background:var(--cream)}
+    .about{padding:70px 0;background:var(--cream);overflow:hidden}
     .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
     /* Credential carousel */
     .cred-carousel{position:relative;margin-top:24px;overflow:hidden;border-radius:var(--rl)}
@@ -73,7 +74,7 @@
     .credential{display:flex;align-items:flex-start;gap:14px;padding:16px 20px;background:var(--white);border-radius:var(--rl);box-shadow:var(--ss);border-left:3px solid var(--gold)}
     .credential-icon{width:36px;height:36px;border-radius:50%;background:var(--gold-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
     .credential-icon svg{width:16px;height:16px;stroke:var(--gold);stroke-width:2;fill:none}
-    .credential-text{font-size:.88rem;color:var(--g700);line-height:1.5}
+    .credential-text{font-size:.88rem;color:var(--g700);line-height:1.5;word-break:break-word;overflow-wrap:break-word}
     .credential-text strong{color:var(--navy);font-weight:600}
     .cred-dots{display:flex;gap:6px;justify-content:center;margin-top:12px}
     .cred-dot{width:7px;height:7px;border-radius:50%;background:var(--g300);border:none;cursor:pointer;transition:var(--tr);padding:0}
@@ -87,7 +88,7 @@
     .carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--g300);border:none;cursor:pointer;transition:var(--tr);padding:0}
     .carousel-dot.active{background:var(--gold);transform:scale(1.3)}
     /* SYMPTOMS */
-    .symptoms{padding:70px 0;background:var(--white)}
+    .symptoms{padding:70px 0;background:var(--white);overflow:hidden}
     .symptoms-header{text-align:center;max-width:600px;margin:0 auto 36px}
     .symptom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:780px;margin:0 auto 32px}
     .symptom-btn{display:flex;align-items:center;gap:10px;padding:12px 16px;border:2px solid var(--g200);border-radius:var(--rl);background:var(--white);cursor:pointer;transition:var(--tr);font-size:.85rem;color:var(--g700);font-family:var(--fb);font-weight:500;text-align:left}
@@ -98,10 +99,10 @@
     .symptom-result.visible{display:block}
     .symptom-result-card{background:var(--cream);border-radius:var(--rl);padding:24px;border-left:4px solid var(--gold);margin-bottom:12px}
     .symptom-result-title{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:6px}
-    .symptom-result-text{font-size:.88rem;color:var(--g700);line-height:1.7;font-weight:300}
+    .symptom-result-text{font-size:.88rem;color:var(--g700);line-height:1.7;font-weight:300;word-break:break-word;overflow-wrap:break-word}
     .symptom-cta{text-align:center;margin-top:24px}
     /* BENEFITS */
-    .benefits{padding:70px 0;background:var(--cream)}
+    .benefits{padding:70px 0;background:var(--cream);overflow:hidden}
     .benefits-header{text-align:center;max-width:600px;margin:0 auto 40px}
     .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .benefit-card{background:var(--white);border-radius:var(--rl);padding:32px 24px;text-align:center;box-shadow:var(--ss);transition:var(--tr)}
@@ -111,7 +112,7 @@
     .benefit-title{font-family:var(--fd);font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:8px}
     .benefit-text{font-size:.85rem;color:var(--g500);line-height:1.7;font-weight:300}
     /* SERVICES */
-    .services{padding:70px 0;background:var(--white)}
+    .services{padding:70px 0;background:var(--white);overflow:hidden}
     .services-header{text-align:center;max-width:600px;margin:0 auto 40px}
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .service-card{background:var(--cream);border-radius:var(--rl);padding:30px 24px;transition:var(--tr);border:1px solid transparent;position:relative;overflow:hidden}
@@ -123,7 +124,7 @@
     .service-title{font-family:var(--fd);font-size:1.08rem;font-weight:600;color:var(--navy);margin-bottom:8px}
     .service-desc{font-size:.85rem;color:var(--g500);line-height:1.7;font-weight:300}
     /* TESTIMONIALS COMBINED */
-    .testimonials{padding:70px 0;background:var(--white)}
+    .testimonials{padding:70px 0;background:var(--white);overflow:hidden}
     .testimonials-header{text-align:center;max-width:650px;margin:0 auto 36px}
     .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto 48px}
     .why-card{background:var(--cream);border-radius:var(--rl);padding:24px 18px;text-align:center;border:1px solid var(--g200)}
@@ -132,16 +133,16 @@
     .why-title{font-family:var(--fd);font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:6px}
     .why-text{font-size:.8rem;color:var(--g500);line-height:1.6;font-weight:300}
     .reviews-title{font-family:var(--fd);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:600;color:var(--navy);text-align:center;margin-bottom:28px}
-    .testimonial-track{position:relative;overflow:hidden;max-width:800px;margin:0 auto}
-    .testimonial-slides{display:flex;transition:transform .5s ease}
-    .testimonial-slide{min-width:100%;padding:0 12px;box-sizing:border-box}
+    .testimonial-track{position:relative;overflow:hidden;max-width:800px;margin:0 auto;width:100%}
+    .testimonial-slides{display:flex;transition:transform .5s ease;width:100%}
+    .testimonial-slide{min-width:100%;padding:0 12px;box-sizing:border-box;max-width:100%}
     .testimonial-card{background:var(--cream);border-radius:var(--rl);padding:28px 24px;position:relative}
     .testimonial-card::before{content:'\201C';position:absolute;top:12px;left:20px;font-family:var(--fd);font-size:2.5rem;color:var(--gold);opacity:.3;line-height:1}
-    .testimonial-text{font-size:.9rem;color:var(--g700);line-height:1.75;font-weight:300;padding-top:8px;overflow:hidden;transition:max-height .4s}
+    .testimonial-text{font-size:.9rem;color:var(--g700);line-height:1.75;font-weight:300;padding-top:8px;overflow:hidden;transition:max-height .4s;word-break:break-word;overflow-wrap:break-word}
     .testimonial-text.clamped{max-height:96px}
     .testimonial-readmore{display:none;background:none;border:none;color:var(--gold);font-weight:600;font-size:.8rem;cursor:pointer;margin-top:6px;font-family:var(--fb);padding:0}
     .testimonial-readmore.visible{display:inline-block}
-    .testimonial-name{font-weight:600;color:var(--navy);margin-top:12px;font-size:.85rem}
+    .testimonial-name{font-weight:600;color:var(--navy);margin-top:12px;font-size:.85rem;word-break:break-word;overflow-wrap:break-word}
     .testimonial-stars{color:var(--gold);margin-top:4px;font-size:.85rem;letter-spacing:2px}
     .testimonial-nav{display:flex;justify-content:center;gap:10px;margin-top:24px}
     .testimonial-nav button{width:36px;height:36px;border-radius:50%;border:1px solid var(--g200);background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
@@ -154,8 +155,8 @@
     .einstein{padding:60px 0;background:linear-gradient(165deg,var(--navy),var(--navy-mid));position:relative;overflow:hidden}
     .einstein::before{content:'';position:absolute;top:-50%;right:-30%;width:60%;height:200%;background:radial-gradient(ellipse,rgba(184,151,106,.06),transparent 60%);pointer-events:none}
     .einstein-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-    .einstein-map{border-radius:var(--rl);overflow:hidden;box-shadow:var(--se)}
-    .einstein-map iframe{width:100%;height:320px;border:0;display:block}
+    .einstein-map{border-radius:var(--rl);overflow:hidden;box-shadow:var(--se);max-width:100%}
+    .einstein-map iframe{width:100%;height:320px;border:0;display:block;max-width:100%}
     .einstein .section-label{color:var(--gold-light)}
     .einstein .section-heading{color:#fff}
     .einstein-text{font-size:.95rem;color:var(--g300);line-height:1.75;margin-bottom:10px;font-weight:300}
@@ -202,36 +203,151 @@
     /* RESPONSIVE */
     @media(max-width:900px){
       .hero-inner{grid-template-columns:1fr;text-align:center;padding:100px 0 60px;gap:32px}
-      .hero-content{max-width:100%}.hero-sub{max-width:100%}
+      .hero-content{max-width:100%}
+      .hero-sub{max-width:100%;word-break:break-word;overflow-wrap:break-word}
       .hero-cta-group{max-width:100%;align-items:center}
       .hero-visual{justify-content:center}
       .hero-photo-frame{width:240px;height:310px}
       .hero-photo-accent{width:260px;height:330px;left:calc(50% - 140px);top:10px}
-      .hero-label{justify-content:center}
+      .hero-label{justify-content:center;flex-wrap:wrap}
       .about-inner,.einstein-inner{grid-template-columns:1fr;gap:36px}
       .einstein-map iframe{height:220px}
       .services-grid,.benefits-grid{grid-template-columns:1fr;gap:12px}
       .why-grid{grid-template-columns:1fr 1fr;gap:12px}
       .symptom-grid{grid-template-columns:1fr 1fr}
-      .footer-inner{flex-direction:column;gap:20px}.footer-info{text-align:left}
+      .footer-inner{flex-direction:column;gap:20px}
+      .footer-info{text-align:left}
       .footer-legal{flex-direction:column;align-items:flex-start}
+      .testimonial-track{max-width:100%}
+      .testimonial-card{padding:24px 20px}
+      .testimonial-name{word-break:break-word}
     }
     @media(max-width:600px){
-      .header-inner{padding:12px 16px}.header-name{font-size:1rem}
-      .header-cta{padding:8px 14px;font-size:.75rem}.header-cta span{display:none}
-      .hero{min-height:auto}.hero-inner{padding:90px 0 40px}.hero-heading{font-size:1.75rem}
+      /* Global overflow prevention */
+      html,body{overflow-x:hidden;max-width:100%}
+      .container{padding:0 16px}
+      /* Header */
+      .header-inner{padding:12px 16px}
+      .header-name{font-size:.95rem}
+      .header-cta{padding:8px 14px;font-size:.75rem}
+      .header-cta span{display:none}
+      /* Hero */
+      .hero{min-height:auto}
+      .hero-inner{padding:90px 0 40px;gap:24px}
+      .hero-heading{font-size:1.65rem;word-break:break-word}
+      .hero-sub{font-size:.92rem;word-break:break-word;overflow-wrap:break-word}
       .hero-photo-frame{width:190px;height:250px}
       .hero-photo-accent{width:210px;height:270px;left:calc(50% - 115px);top:8px}
-      .trust-items{gap:16px}.trust-item{font-size:.75rem}
+      .hero-cta-group{max-width:100%}
+      .btn-primary{padding:12px 20px;font-size:.82rem;white-space:normal;text-align:center}
+      .hero-crm{font-size:.7rem}
+      /* Trust */
+      .trust-bar{padding:16px 0}
+      .trust-items{gap:12px;justify-content:flex-start;flex-wrap:wrap}
+      .trust-item{font-size:.72rem;gap:8px;flex:0 0 auto;max-width:100%}
+      .trust-icon{width:30px;height:30px}
+      .trust-icon svg{width:14px;height:14px}
+      /* Sections */
       .about,.services,.benefits,.symptoms,.testimonials{padding:48px 0}
-      .about-carousel{aspect-ratio:16/10}
-      .symptom-grid{grid-template-columns:1fr}
-      .why-grid{grid-template-columns:1fr}
-      .service-card,.benefit-card{padding:24px 18px}
-      .einstein{padding:48px 0}.cta-section{padding:48px 0}.cta-card{padding:32px 20px}
-      .credential{padding:12px 16px}
+      .section-heading{font-size:1.4rem;word-break:break-word}
+      .section-text{font-size:.88rem;word-break:break-word;overflow-wrap:break-word}
+      /* About */
+      .about-carousel{aspect-ratio:1/1}
+      .about-inner{gap:28px}
+      /* Credentials carousel */
+      .cred-carousel{margin-top:16px}
+      .credential{padding:12px 14px;gap:10px}
+      .credential-icon{width:32px;height:32px}
+      .credential-icon svg{width:14px;height:14px}
+      .credential-text{font-size:.82rem;word-break:break-word;overflow-wrap:break-word}
+      /* Symptoms */
+      .symptom-grid{grid-template-columns:1fr;gap:8px}
+      .symptom-btn{padding:10px 14px;font-size:.82rem}
+      .symptom-result-card{padding:18px 16px}
+      .symptom-result-title{font-size:.95rem}
+      .symptom-result-text{font-size:.82rem;word-break:break-word;overflow-wrap:break-word}
+      /* Benefits */
+      .benefit-card{padding:24px 18px}
+      .benefit-icon{width:48px;height:48px}
+      .benefit-icon svg{width:20px;height:20px}
+      .benefit-title{font-size:.95rem}
+      .benefit-text{font-size:.82rem;word-break:break-word}
+      /* Services */
+      .service-card{padding:24px 18px}
+      .service-title{font-size:.98rem}
+      .service-desc{font-size:.82rem;word-break:break-word}
+      /* Why grid */
+      .why-grid{grid-template-columns:1fr;gap:10px}
+      .why-card{padding:20px 16px}
+      .why-title{font-size:.88rem}
+      .why-text{font-size:.78rem;word-break:break-word}
+      /* Testimonials */
+      .reviews-title{font-size:1.15rem;margin-bottom:20px}
+      .testimonial-track{max-width:100%;overflow:hidden}
+      .testimonial-slide{padding:0 4px}
+      .testimonial-card{padding:20px 16px}
+      .testimonial-card::before{font-size:2rem;top:8px;left:12px}
+      .testimonial-text{font-size:.84rem;line-height:1.7;word-break:break-word;overflow-wrap:break-word}
+      .testimonial-name{font-size:.8rem;word-break:break-word;overflow-wrap:break-word}
+      .testimonial-stars{font-size:.8rem}
+      .testimonial-readmore{font-size:.78rem}
+      .testimonial-nav button{width:32px;height:32px}
+      .testimonial-nav button svg{width:12px;height:12px}
+      .testimonial-dots{gap:5px;flex-wrap:wrap;justify-content:center}
+      .t-dot{width:6px;height:6px}
+      /* Einstein */
+      .einstein{padding:48px 0}
+      .einstein-inner{gap:28px}
+      .einstein-map iframe{height:200px}
+      .einstein-text{font-size:.88rem;word-break:break-word}
+      .einstein-address{font-size:.78rem;word-break:break-word}
+      /* CTA */
+      .cta-section{padding:48px 0}
+      .cta-card{padding:32px 18px}
+      .cta-heading{font-size:1.3rem}
+      .cta-text{font-size:.88rem;word-break:break-word}
+      .cta-btn{padding:14px 24px;font-size:.88rem;white-space:normal;text-align:center}
+      /* Footer */
+      .footer{padding:32px 0 20px}
+      .footer-brand{max-width:100%}
+      .footer-name{font-size:.92rem}
+      .footer-crm{font-size:.72rem;word-break:break-word}
+      .footer-info-item{font-size:.72rem;word-break:break-word}
+      .footer-legal-text{font-size:.65rem;max-width:100%;word-break:break-word}
+      /* WA float */
       .whatsapp-float{width:48px;height:48px;bottom:16px;right:16px}
       .whatsapp-float svg{width:22px;height:22px}
+      /* Dots - prevent overflow */
+      .carousel-dots,.cred-dots{flex-wrap:wrap}
+    }
+    /* Extra small screens (320px) */
+    @media(max-width:380px){
+      .container{padding:0 12px}
+      .header-inner{padding:10px 12px}
+      .header-name{font-size:.88rem}
+      .hero-inner{padding:84px 0 32px}
+      .hero-heading{font-size:1.45rem}
+      .hero-sub{font-size:.85rem}
+      .hero-photo-frame{width:160px;height:210px}
+      .hero-photo-accent{width:178px;height:228px;left:calc(50% - 98px);top:6px}
+      .section-heading{font-size:1.25rem}
+      .section-label{font-size:.65rem}
+      .why-card{padding:16px 12px}
+      .why-title{font-size:.82rem}
+      .why-text{font-size:.72rem}
+      .testimonial-card{padding:16px 12px}
+      .testimonial-text{font-size:.8rem}
+      .testimonial-text.clamped{max-height:80px}
+      .cta-card{padding:24px 14px}
+      .cta-heading{font-size:1.15rem}
+      .cta-btn{padding:12px 18px;font-size:.82rem}
+      .credential-text{font-size:.78rem}
+      .credential{padding:10px 12px}
+      .symptom-btn{padding:10px 12px;font-size:.78rem}
+      .benefit-title{font-size:.88rem}
+      .benefit-text{font-size:.78rem}
+      .einstein-text{font-size:.82rem}
+      .footer-legal-text{font-size:.6rem}
     }
   </style>
 </head>
